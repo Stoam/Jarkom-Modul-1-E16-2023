@@ -174,7 +174,7 @@ Gunakan filter `ip.dst == 184.87.193.88` untuk mendapatkan packet yang menuju IP
 
 ![Soal7-Filter](images/Soal7_dst.png)
 
-*Gambar submission*
+![jawaban7](images/jawaban7.png)
 
 ## SOAL 8
 
