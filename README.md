@@ -38,21 +38,19 @@ User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya
 
 Karena aktivitas yang dilakukan adalah mengunggah suatu file, maka cari packet dengan yang mengandung kata "STOR".
 
-*Gambar filter*
+![Filter-STOR](images/Soal1_STOR.png)
 
 Didapatkan sequence number dan acknowledgement number dari packet tersebut:
 
-*Gambar number*
+![Request-Numbers](images/Soal1_numbers.png)
 
-Dari informasi packet di atas, didapatkan bahwa nama file yang dikirim adalah "c75-GrabThePisher.zip", sehinggga kita perlu mencari packet response yang mengandung kata "GrabThePisher".
+Dari informasi packet di atas, didapatkan bahwa nama file yang dikirim adalah "c75-GrabThePisher.zip", sehinggga kita perlu mencari packet response yang mengandung kata "GrabThePhisher".
 
-*Gambar filter*
+![Filter-GrabThePhisher](images/Soal1_GrabThePhisher.png)
 
 Didapatkan sequence number dan acknowledgement number dari packet tersebut:
 
-*Gambar number*
-
-*Gambar submission*
+![Response-Numbers](images/Soal1_Response.png)
 
 ## Soal 2
 
@@ -62,13 +60,11 @@ Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 
 Lakukan filtering menggunakan ip address portal praktikum jarkom.
 
-*Gambar filter*
+![IP-Platform](images/Soal2_ip.png)
 
 Pilih salah satu packet, kemudian follow tcp stream. Setelah itu, didapatkan bahwa server yang digunakan adalah gunicorn.
 
-*Gambar TCP stream*
-
-*Gambar submission*
+![Soal2-Stream](images/Soal2_Stream.png)
 
 ## Soal 3
 
@@ -81,9 +77,7 @@ Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 
 Cari packet nomor 130, kemudian lihat informasi atribut checksum pada field UDP.
 
-*Gambar checksum*
-
-*Gambar submission*
+![Checksum](images/Soal4_Checksum.png)
 
 ## Soal 5
 
@@ -95,39 +89,38 @@ Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk men
 
 **Jawaban:**
 
-Pilih salah satu packet, kemudian lakukan follow TCP stream. Setelah itu, didapatkan informasi seperti ini:
+Pilih packet yang mengandung kata "zip", kemudian lakukan follow TCP stream. Setelah itu, didapatkan informasi seperti ini:
 
-*Gambar TCP Stream (password)*
+![Filter-Zip](images/Soal5_zip.png)
+
+![Password](images/Soal5_Password.png)
 
 Setelah itu, lakukan decode pada encoded password tersebut, sehingga didapatkan password asli seperti ini:
 
-*Gambar password*
+![Decoded-Password](images/Soal5_Decode.png)
 
 Buka file zip, kemudian buka file txt di dalamnya untuk mendapatkan netcat untuk menjawab soal.
 
-*Gambar txt*
+![TXT-Netcat](images/Soal5_netcat.png)
 
 Untuk menjawab subsoal 1 bisa dilakukan secara manual dengan melihat banyaknya packet yang ter-capture.
 
-*Gambar packet capture*
+![Captured](images/Soal5_Captured.png)
 
-Untuk menjawab subsoal 2, pilih salah satu packet SMTP, kemudian lihat informasi packet tersebut untuk mendapatkan port yang digunakan.
+Untuk menjawab subsoal 2, di modul dijelaskan bahwa untuk SMTP port yang digunakan adalah Port 25.
 
-*Gambar informasi packet*
+![Port-25](images/Soal5_Port25.png)
 
-Berdasarkan sumber berikut:
+Range dari private ip address adalah sebagai berikut:
+- `10.0.0.0` hingga `10.255.255.255`
+- `172.16.0.0` hingga `172.31.255.255`
+- `192.168.0.0` hingga `192.168.255.255`
 
-(link gfg)
+Sehingga kita bisa jalankan filter berikut untuk mencari public ip:
 
-Dikatakan bahwa perbedaan antara private dengan public ip address sebagai berikut:
+![Private-IP](images/Soal5_Private.png)
 
-*Gambar perbedaan*
-
-Kemudian, kita bisa mencari ip address dari packet yang tidak dalam range private ip address.
-
-*Gambar ip address*
-
-*Gambar submission*
+Dari filter tersebut didapatkan bahwa ip yang public adalah `74.53.140.153`.
 
 ## Soal 6
 
