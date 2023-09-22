@@ -1,4 +1,4 @@
-# Praktikum Modul 1 Jarkom
+# LAPRES Jarkom-Modul-1-E16-2023
 
 ## Anggota Kelompok
 
@@ -11,21 +11,25 @@
 
 ## Daftar Isi
 
-- [Praktikum Modul 1 Jarkom](#praktikum-modul-1-jarkom)
+- [LAPRES Jarkom-Modul-1-E16-2023](#lapres-jarkom-modul-1-e16-2023)
   - [Anggota Kelompok](#anggota-kelompok)
   - [Daftar Isi](#daftar-isi)
-  - [Soal 1](#soal-1)
-  - [Soal 2](#soal-2)
-  - [Soal 3](#soal-3)
-  - [Soal 4](#soal-4)
-  - [Soal 5](#soal-5)
-  - [Soal 6](#soal-6)
-  - [Soal 7](#soal-7)
-  - [Soal 8](#soal-8)
-  - [Soal 9](#soal-9)
-  - [Soal 10](#soal-10)
+  - [SOAL 1](#soal-1)
+  - [SOAL 2](#soal-2)
+  - [SOAL 3](#soal-3)
+    - [Jawaban](#jawaban)
+      - [a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?](#a-berapa-banyak-paket-yang-tercapture-dengan-ip-source-maupun-destination-address-adalah-239255255250-dengan-port-3702)
+      - [b. Protokol layer transport apa yang digunakan?](#b-protokol-layer-transport-apa-yang-digunakan)
+  - [SOAL 4](#soal-4)
+  - [SOAL 5](#soal-5)
+  - [SOAL 6](#soal-6)
+  - [SOAL 7](#soal-7)
+  - [SOAL 8](#soal-8)
+  - [SOAL 9](#soal-9)
+  - [SOAL 10](#soal-10)
+    - [Jawaban](#jawaban-1)
 
-## Soal 1
+## SOAL 1
 
 User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
 
@@ -52,7 +56,7 @@ Didapatkan sequence number dan acknowledgement number dari packet tersebut:
 
 ![Response-Numbers](images/Soal1_Response.png)
 
-## Soal 2
+## SOAL 2
 
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 
@@ -66,10 +70,44 @@ Pilih salah satu packet, kemudian follow tcp stream. Setelah itu, didapatkan bah
 
 ![Soal2-Stream](images/Soal2_Stream.png)
 
-## Soal 3
+## SOAL 3
+
+Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
+a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
+b. Protokol layer transport apa yang digunakan?
+
+### Jawaban
+#### a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
+- ##### Penjelasan
+  `(ip.src == 239.255.255.250 && udp.srcport == 3702) || (ip.dst == 239.255.255.250 && udp.dstport == 3702)`, digunakan untuk menyaring paket berdasarkan alamat IP sumber dan tujuan, serta port sumber dan tujuan. 
+
+1. `(ip.src == 239.255.255.250 && udp.srcport == 3702)`: Ini memeriksa paket yang memiliki alamat IP sumber 239.255.255.250 dan port sumber UDP 3702. Ini berarti mencari paket yang dikirim oleh host dengan alamat IP ini dan menggunakan port UDP 3702 sebagai sumber.
+
+2. `(ip.dst == 239.255.255.250 && udp.dstport == 3702)`: Ini memeriksa paket yang memiliki alamat IP tujuan 239.255.255.250 dan port tujuan UDP 3702. Ini berarti mencari paket yang dikirim ke host dengan alamat IP ini dan menggunakan port UDP 3702 sebagai tujuan.
+
+Dengan kombinasi dari kedua kondisi ini (disjungsi dengan `||` yang berarti "atau"), dapat menyaring paket yang terkait dengan lalu lintas yang melibatkan alamat IP 239.255.255.250 dengan port UDP 3702 baik sebagai sumber atau tujuan. Hanya saja satu memeriksa 
+
+![Langkah3](images/langkah3.png)
 
 
-## Soal 4
+- ##### Screenshoot
+
+  ![Jawaban3](images/jawaban3.png)
+
+- ##### Kendala
+  Tidak ada
+
+#### b. Protokol layer transport apa yang digunakan?
+- ##### Penjelasan
+ Seperti yang terlihat di packet tersebut bahwa protokol yang di gunakan adalah UDP 
+- ##### Screenshoot
+  
+![Jawaban3](images/jawaban3.png)
+
+- ##### Kendala
+  Tidak ada
+
+## SOAL 4
 
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 
@@ -79,7 +117,7 @@ Cari packet nomor 130, kemudian lihat informasi atribut checksum pada field UDP.
 
 ![Checksum](images/Soal4_Checksum.png)
 
-## Soal 5
+## SOAL 5
 
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet tersebut.
 
@@ -122,38 +160,65 @@ Sehingga kita bisa jalankan filter berikut untuk mencari public ip:
 
 Dari filter tersebut didapatkan bahwa ip yang public adalah `74.53.140.153`.
 
-## Soal 6
+![Soal5-Submit](images/Jawaban5.png)
 
-## Soal 7
+## SOAL 6
+
+## SOAL 7
 
 Berapa jumlah packet yang menuju IP 184.87.193.88?
 
 **Jawaban:**
 
-Gunakan filter "ip.dst == 184.887.193.88" untuk mendapatkan packet yang menuju IP tersebut, kemudian dihitung secara manual banyaknya packet yang terfilter.
+Gunakan filter `ip.dst == 184.87.193.88` untuk mendapatkan packet yang menuju IP tersebut, kemudian dihitung secara manual banyaknya packet yang terfilter.
 
-*Gambar filter*
+![Soal7-Filter](images/Soal7_dst.png)
 
 *Gambar submission*
 
-## Soal 8
+## SOAL 8
 
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 
 **Jawaban:**
 
-Filter packet menggunakan dstport 80 untuk mendapatkan packet yang menuju port 80, serta gunakan relasi OR untuk mendapatkan semua packet TCP dan UDP.
+Filter packet menggunakan dstport 80 untuk mendapatkan packet yang menuju port 80, serta gunakan relasi OR untuk mendapatkan semua packet TCP dan UDP. Sehingga filter yang digunakan adalah `tcp.dstport == 80 || udp.dstport == 80`.
 
-*Gambar Submission*
-
-## Soal 9
+## SOAL 9
 
 Berikan kueri filter sehigga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
 
 **Jawaban:**
 
-Untuk yang berasal menggunakan filter "src", sedangkan untuk menuju menggunakan filter "dst", kemudian gunakan relasi AND.
+Untuk yang berasal menggunakan filter "src", sedangkan untuk menuju menggunakan filter "dst", kemudian gunakan relasi AND. Sehingga filter yang digunakan adalah `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`.
 
-*Gambar submission*
+## SOAL 10
 
-## Soal 10
+Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
+
+### Jawaban
+- ##### Penjelasan
+Untuk menemukan kredensial yang benar ketika user mencoba login menggunakan Telnet dalam Wireshark, berikut adalah langkah-langkahnya :
+- Buka file capture Wireshark yang berisi riwayat packet saat aktivitas Telnet berlangsung.
+- Gunakan "Login" sebagai kata kunci pencarian. Berikut langkah-langkahnya:
+   a. Klik pada kolom "Display Filter" di bagian atas jendela Wireshark.
+   b. Ketikkan filter berikut dan tekan Enter:
+      ```
+      telnet && frame contains "Login"
+      ```
+      Filter ini akan mencari packet Telnet yang mengandung kata "Login."
+- Klik pada salah satu packet Telnet yang muncul di daftar.
+- Dalam jendela "Packet Details" di bagian bawah, klik kanan pada packet tersebut dan pilih "Follow" > "TCP Stream." Ini akan membuka jendela baru yang menampilkan percakapan Telnet.
+- Di dalam jendela TCP Stream, akan ada komunikasi antara client dan server Telnet. Biasanya, username dan password akan muncul di sini.
+- Cari bagian yang mengandung informasi login, seperti username dan password. Dan disini muncul, username adalah "dhafin" dan password adalah "kesayangannyak0k0."
+
+  ![Langkah10_1](images/langkah10_1.png)   ![Langkah10_2](images/langkah10_2.png)   ![Langkah10_3](images/langkah10_3.png)
+
+  
+- ##### Screenshoot
+
+![Jawaban10](images/jawaban10.png)
+
+  
+- ##### Kendala
+Sempat salah pada username karena menulis dengan kata aslinya tanpa membedakan warna merah dan biru nyaa, yang awalnya adalah ddhhaaffiinn tapi seharusnya adalah dhafin
